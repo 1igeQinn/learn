@@ -29,9 +29,35 @@
 在该级别中，事务中的修改，即使没有提交，对其他事务也都是课件的。事务可以读取未提交的数据，这也被称为***脏读（Dirty Read）***。 在实际应用中一般很少使用。
 
 2. READ COMMITTED（提交读）
+大多数的数据系统的默认级别都是READ COMMITED(MYSQL 不是)
+
 3. REPEATABLE READ （可重复读）---- mysql默认的事务隔离级别
 4. SERIALIZABLE （可串行化）
 
+### 1.3.2 死锁
+### 1.3.4 事务日志
+#### 自动提交（AUTOCOMMIT）
+MYSQL 默认采用自动提交，也就是说，如果不是显式的开始一个事务，则每一个查询都被当做一个事务执行提交操作。
+
+```
+    show variables like 'autocommit'; //查看autocommit
+    set autocommit=1；//1或者ON表示启用， 0或者OFF表示禁用
+```
+
+#### 在事务中混合使用存储引擎
+
+####隐式和显式锁定
+
+##1.4多版本并发控制
+##1.5 MYSQL的存储引擎
+
+在文件系统中，MYSQL将每个数据库（schema）保存为数据目录下的一个子目录。创建表时会在子目录下创建一个和表明相同的.frm文件。（例如创建一个myTable的为表，mysql会在myTable.frm文件中保存该表的定义）。***MySQL的大小写敏感性和具体的平台密切相关***
+可以使用`show table status like 'user' \G`
 
 
+###1.5.2 MyISAM 存储引擎
+MySQL5.1 之前的版本默认都是MyISAM引擎。MyISAM存储引擎提供了大量的特性：
+全文索引，压缩，空间函数。但是***MyISAM不支持事务和行级锁***
 
+####存储
+MyISAM会将表存储在两个文件中：数据文件和索引文件，分别以`.MYD`和`.MYI`后缀命名
