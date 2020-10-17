@@ -1,0 +1,19 @@
+# L4 更多的关于 Triggers
+
+每个Trigger都用一个triggerKey来标识自己，所有的Trigger还有许多的共同属性。这些共同的属性在通过TriggerBuilder构建Trigger时使用。
+
+## 共同的属性
+- jobKey 当trigger触发的时候该执行的job标识
+- startTime 首次触发的时间，值是java.util.Date
+- endTime 最后执行的时间 之后将失效
+
+## 优先级
+在同一时间触发的trigger的任务，可以通过设置Trigger的`priority`属性来改变在并发情况下的优先级。如果不设置则使用默认的优先级5.任何整数（负数，正数）值都是可以用来设置优先级
+
+## 失败指令（说明）
+
+另一个重要的属性是`misfire instruction`.在服务器停止或者没有足够的线程来执行任务的时候会出现misfire，不同的trigger有不同的指令。她们都使用`smart policy`指令。
+搜索持久化的triggers
+
+## Calendar
+Quartz Calendar对象，（不是java.util.Calendar）
