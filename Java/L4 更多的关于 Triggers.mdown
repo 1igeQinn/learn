@@ -17,3 +17,10 @@
 
 ## Calendar
 Quartz Calendar对象，（不是java.util.Calendar）
+
+#SimpleTrigger
+
+SimpleTrigger 能够满足固定时间执行一次的任务，或者在开始之后固定间隔时间重复执行的任务。
+
+重复次数 可以是0、正数或者常量（SimpleTrigger.REPEAT_INDEFINITELY）;
+重复时间间隔 必须是0 或者表示毫秒（milliseconds）数的长整形

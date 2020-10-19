@@ -175,8 +175,6 @@ git cherry-pick  //cpoy
 ```
 [test teach palce](http://pcottle.github.io/learnGitBranching/?NODEMO)
 
-
-
 #git 分支
 查看远程的分支
 ```
@@ -224,10 +222,20 @@ git tag -d v0.01
 ```
 
 
-
 ```
 # 创建新的分支 并直接切换到新的分支
 git checkout -b "newBranch"
 ```
+
+## PUSH
+ git push <远程主机名> <本地分支名> <本地分支名>:<远程分支名>
+
+ ```
+ #推送远程不存在的分支
+git push origin dev:dev # 推送本第的dev分支到远程 如果分支不存在 就会创建
+
+git push origin :dev #推送空的分支到远程 等同于删除远程的分支效果等同于 git push origin --delete  branchname
+
+ ```
 
 
