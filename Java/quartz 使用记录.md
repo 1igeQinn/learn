@@ -1,6 +1,6 @@
 # quartz集群配置记录
  配置文件 quatrz.properties
- 
+
  ```
 
 #============================================================================
@@ -124,3 +124,32 @@ public class QuartzConfiguration {
 
 
  参考：[Quartz应用与集群原理分析](http://tech.meituan.com/mt-crm-quartz.html)
+
+
+ # 遇到问题
+
+ ```
+ 2016-05-23 21:16:02,026 WARN [org.springframework.scheduling.quartz.LocalDataSourceJobStore] - Failed to override connection auto commit/transaction isolation.
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OPTION SQL_SELECT_LIMIT=DEFAULT' at line 1
+    at sun.reflect.GeneratedConstructorAccessor43.newInstance(Unknown Source)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+    at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+    at com.mysql.jdbc.Util.getInstance(Util.java:386)
+    at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+    at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+    at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+    at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2002)
+    at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2163)
+    at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2618)
+    at com.mysql.jdbc.StatementImpl.executeSimpleNonQuery(StatementImpl.java:1644)
+    at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1535)
+    at com.mysql.jdbc.ConnectionImpl.getTransactionIsolation(ConnectionImpl.java:3176)
+    at com.mysql.jdbc.ReplicationConnection.getTransactionIsolation(ReplicationConnection.java:237)
+    at sun.reflect.GeneratedMethodAccessor48.invoke(Unknown Source)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:483)
+    at org.apache.tomcat.jdbc.pool.ProxyConnection.invoke(ProxyConnection.java:126)
+ ```
+
+> 此问题是jdbc驱动版本问题，将我们原来的mysql jdbc 升级到最新的版本及解决问题
