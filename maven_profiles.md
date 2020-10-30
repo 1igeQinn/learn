@@ -71,3 +71,5 @@ apiDomain=${apiDomain}
 ```
 $mvn clean compile -Plocal
 ```
+
+(Apache Maven 使用 profile 和 filtering 实现多种环境下的资源配置管理)[http://archboy.org/2012/05/21/apache-maven-profile-filtering-multiple-build-environments/]
