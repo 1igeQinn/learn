@@ -13,6 +13,7 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 ```
 
 >主要原因就是网速问题（maven服务器在国外），因为配置文件无法下载造成阻塞
+
 ##解决方式
 ### 一 命令行解决方式 
 
@@ -20,14 +21,14 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 2. 将archetype-catalog.xml复制到 .m2\repository\org\apache\maven\archetype\archetype-catalog\2.2下面
 3. 在上述命令后增加参数-DarchetypeCatalog=local，变成读取本地文件即可。
 
-###二 Intellij的解决方式
+### 二 Intellij的解决方式
 关闭所有的intellij 项目，点开设置。找到maven的runner 在VM Options 里面添加
 
 ```
 -DarchetypeCatalog=internal 
 ```
 
-*** 注意右上角的灰字 ：for dafault projetc 而不是 for current project ***
+***注意右上角的灰字 ：for dafault projetc 而不是 for current project ***
 
 ###参考地址
 1. [IDEA新建MAVEN项目时，MVN ARCHETYPE:GENERATE 速度缓慢
