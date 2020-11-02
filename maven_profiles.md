@@ -62,12 +62,14 @@ apiDomain=http://test.mtsports.cn:8181/v1/
 ```
 
 在项目的resources 的properties文件中 配置如下
+
 ```
 domain=${domain}
 apiDomain=${apiDomain}
 ```
 
 在编译项目时，可以使用 -P 参数指定需要使用的 profile 的 id，比如下面命令将会使用 local profile：
+
 ```
 $mvn clean compile -Plocal
 ```
@@ -75,6 +77,7 @@ $mvn clean compile -Plocal
 ## 过滤不需要替换的变量。
 
 由于项目的所有的配置文件都在resources目录，导致一些本来不要被替换的都替换了如某个xml文件中的
+
 ```
     <rabbit:connection-factory id="rabbitmqConnectionFactory"
                                host="${rabbitmq.host}"
@@ -90,6 +93,7 @@ $mvn clean compile -Plocal
 ### 解决方式
 1. 第一种 首先想到的是将 需要替换的和不需要替换的分离， 即将原来的environment.properties 单独的放到一个文件夹下面（如var）
 则原来的配置改为
+
 ```
 <build>
  <resources>
