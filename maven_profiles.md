@@ -91,6 +91,7 @@ $mvn clean compile -Plocal
 中的是不需要被替换的 也被替换了。
 
 ### 解决方式
+
 1. 第一种 首先想到的是将 需要替换的和不需要替换的分离， 即将原来的environment.properties 单独的放到一个文件夹下面（如var）
 则原来的配置改为
 
