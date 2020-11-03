@@ -140,4 +140,15 @@ $mvn clean compile -Plocal
 ```
 
 这样既可。
+
+## Skipping Test（跳过测试）
+
+[skippinf tests](http://maven.apache.org/surefire/maven-surefire-plugin/examples/skipping-test.html)
+
+###参考
 (Apache Maven 使用 profile 和 filtering 实现多种环境下的资源配置管理)[http://archboy.org/2012/05/21/apache-maven-profile-filtering-multiple-build-environments/]
+
+
+
+# jrebel 注册码 使用的Facebook注册获取的[参考的地址](http://www.cnblogs.com/challengeof/p/4794282.html) 使用第一步用的正版的注册
+>zjCqCawb3gvwHjdbQWW5KqwivUIkNRPWAbgNYoDVI7qvCezWLg9KuyIiNYDJ4pj5deeAA9pkvy7+sZ3cTXwn6RSfHknJx05L4/1SOa4VXkOFar7xu3MFiMjrhiSwNkexP8JErg==
