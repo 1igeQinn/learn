@@ -51,3 +51,8 @@ package org.springframework.core.convert.converter;
 
 ##7.7配置全局的日期和时间格式化
 
+```
+@Configuration public class AppConfig {     @Bean     public FormattingConversionService conversionService() {         //使用DefaultFormattingConversionService，但是不注册默认的fomatters         DefaultFormattingConversionService conversionService =                 new DefaultFormattingConversionService(false);          conversionService.addFormatterForFieldAnnotation(new NumberFormatAnnotationFormatterFactory());         DateFormatterRegistrar registrar = new DateFormatterRegistrar();         registrar.setFormatter(new DateFormatter("yyyyMMdd"));         registrar.registerFormatters(conversionService);         return conversionService;     }  }
+
+```
+
