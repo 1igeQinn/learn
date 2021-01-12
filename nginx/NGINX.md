@@ -22,6 +22,7 @@
 ###配置
 - 在http节点里添加：
 ####定义负载均衡设备的ip及设备状态
+
 ```
 upstream myServer{
     server 127.0.0.1:9090 down；
@@ -32,6 +33,7 @@ upstream myServer{
       
 ```
 - 在需要使用负载的Server的节点下添加
+
 ```
 proxy_pass http://myServer;
 ```
