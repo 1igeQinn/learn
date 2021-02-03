@@ -1,3 +1,17 @@
+##概念
+- NRT（近乎实时） 最多延迟1s 查询
+- 集群
+每个集群被一个唯一的名字所标识 默认是'elasticsearch'
+node 节点
+集群下的单个服务器，保存数据
+
+index 索引
+索引的名字（标识） 必须小写
+
+- Type 
+
+
+## 操作
 修改（指定）节点名称
 ./elasticsearch --cluster.name my_cluster_name --node.name my_node_name
 
